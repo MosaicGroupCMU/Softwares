@@ -202,8 +202,21 @@ A successful installation of GPU-enabled QE will say the following in the output
 
 # Additional Resources
 
-[QE CMAKE Instructions](https://gitlab.com/QEF/q-e/-/wikis/Developers/CMake-build-system)
+* QE CMAKE [Instructions](https://gitlab.com/QEF/q-e/-/wikis/Developers/CMake-build-system)
+* Quantum Espresso Mailing List [here](https://lists.quantum-espresso.org/pipermail/users/2023-July/050687.html#:~:text=url=https%253A%252F,~/.bashrc%20*Robinson%20J.)
+* MaX Webinar on ["How to use Quantum ESPRESSO on new GPU based HPC systems"](https://www.youtube.com/watch?v=76xH_mpw8CU)
+* Quantum ESPRESSO & GPU survival Guide [Presentation](https://docs.epw-code.org/_downloads/e9a4fa9f61302bb55b5f804bcc805880/Sat.1.Giannozzi.pdf)
+* Quantum ESPRESSO [User Guide](https://www.quantum-espresso.org/Doc/user_guide_PDF/user_guide.pdf)
+* Another installation [guide](https://www.youtube.com/watch?v=Z3-dkOpfEqE) and benchmarking too!
+* Quantum ESPRESSO on HPC and GPU systems:parallelization and hybrid architectures [presentation](https://indico.ictp.it/event/9616/session/53/contribution/89/material/slides/0.pdf)
+* [Accelerate Quantum Espresso simulations with GPU Shapes on OCI](https://blogs.oracle.com/cloud-infrastructure/post/accelerate-quantum-espresso-simulation-oci-gpu)
+* QUANTUM ESPRESSO on HPC systems: [Hands-on-session](https://enccs.github.io/max-coe-workshop/_downloads/742ab11aebbb2123596209ded0db2c0b/Handson-Day1.pdf)
+*  
 
 # Troubleshooting
 Come back later for information on this!
+
+* Nvidia does not support fortran 2008! Will cause errors with HDF5 as seen [here](https://docs.nersc.gov/systems/perlmutter/vendorbugs/#missing-mpi_f08-module)
+* Problems installing Quantum epsresso with GPU acceleration [here](https://forums.developer.nvidia.com/t/problems-installing-quantum-epsresso-with-gpu-acceleration/189908)
+* Compiling Quantum ESPRESSO with GPU support [here](https://forums.developer.nvidia.com/t/compiling-quantum-espresso-with-gpu-support/222227)
 
