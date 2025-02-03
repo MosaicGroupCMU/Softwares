@@ -79,13 +79,13 @@ Default Target:                cc70
 Use to get the specific information on the target and driver use: 
 `$ nvaccelinfo | grep -e 'Target' -e 'Driver'`
 
-IMAGE 2  ![Output from nvaccelinfo](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
+![Output from nvaccelinfo](https://github.com/MosaicGroupCMU/Softwares/blob/c8040188aee443a7a328b145b9e498feacc35bbb/Quantum-Espresso-GPU/Images/Picture2.png "a title")
 
 You could also use the following command to find more details on the gpu node and which CUDA Toolkit is being used: 
 
 `$ nvidia-smi`
 
-Image 1 ![output from nvidia-smi](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
+![output from nvidia-smi](https://github.com/MosaicGroupCMU/Softwares/blob/c8040188aee443a7a328b145b9e498feacc35bbb/Quantum-Espresso-GPU/Images/Picture1.png "a title")
 
 Similarly, check the version of Nvidia C compiler and mpirun currently using. 
 ```
@@ -197,8 +197,8 @@ export OMP_NUM_THREADS=4
 
 A successful installation of GPU-enabled QE will say the following in the output file. 
 
-IMAGE 3 ![showing where it says gpu-accellerated within the beginning of QE output](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
-IMAGE 4 ![Table within QE output showing the amount of calls to GPUs](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
+![showing where it says gpu-accellerated within the beginning of QE output](https://github.com/MosaicGroupCMU/Softwares/blob/c8040188aee443a7a328b145b9e498feacc35bbb/Quantum-Espresso-GPU/Images/Picture3.png) "a title")
+![Table within QE output showing the amount of calls to GPUs](https://github.com/MosaicGroupCMU/Softwares/blob/c8040188aee443a7a328b145b9e498feacc35bbb/Quantum-Espresso-GPU/Images/Picture4.png) "a title")
 
 # Additional Resources
 
