@@ -37,7 +37,8 @@ It is important to compile on a GPU node.
 Once the session is loaded, check your details of the machine using 
 `$ nvaccelinfo`
 
-```CUDA Driver Version:           12060
+```console
+CUDA Driver Version:           12060
 NVRM version:                  NVIDIA UNIX x86_64 Kernel Module  560.35.03  Fri Aug 16 21:39:15 UTC 2024
 
 Device Number:                 0
@@ -94,7 +95,7 @@ mpirun --version
 ```
 
 **3. Get the current package of QE from github** 
-```
+```console
 $ cd /path/where/you/want/qe/to/be/installed/
 $ mkdir qe
 $ cd qe
@@ -105,7 +106,7 @@ $ git checkout tags/qe-7.3.1 -b qe-7.3.1
 ``` 
 **4. Configure your installation using CMake**
 This is the CMAKE command I used to compile. You can customize it as you wish to include Environ or LibXC. Ideally, you would specify only what is necessary and what your system cannot find for itself.
-```
+```console
 cmake -DCMAKE_C_COMPILER=nvc
 -DCMAKE_Fortran_COMPILER=nvfortran
 -DQE_ENABLE_PROFILE_NVTX=ON
@@ -133,13 +134,13 @@ make -j16 > build.log 2>&1
 
 Test input file: 
 
-```
+```fortran
 &control
     calculation = 'scf'
     prefix = 'silicon'
     pseudo_dir = '/path/to/pseudopotential'
     outdir = './tmp'
-/:
+/
 &system
     ibrav = 2,
     celldm(1) = 10.2,
@@ -164,7 +165,8 @@ K_POINTS automatic
 
 Here is a sample submission script to test. 
 
-```
+```bash
+#!/bin/bash
 #SBATCH -N 1
 #SBATCH -p GPU-shared
 #SBATCH -t 0:10:00
@@ -211,7 +213,6 @@ A successful installation of GPU-enabled QE will say the following in the output
 * Quantum ESPRESSO on HPC and GPU systems:parallelization and hybrid architectures [presentation](https://indico.ictp.it/event/9616/session/53/contribution/89/material/slides/0.pdf)
 * [Accelerate Quantum Espresso simulations with GPU Shapes on OCI](https://blogs.oracle.com/cloud-infrastructure/post/accelerate-quantum-espresso-simulation-oci-gpu)
 * QUANTUM ESPRESSO on HPC systems: [Hands-on-session](https://enccs.github.io/max-coe-workshop/_downloads/742ab11aebbb2123596209ded0db2c0b/Handson-Day1.pdf)
-*  
 
 # Troubleshooting
 Come back later for information on this!
