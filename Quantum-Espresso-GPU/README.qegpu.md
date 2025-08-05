@@ -129,45 +129,45 @@ Finally, make the software. The following command compiles the code using 16 pro
 make -j16 > build.log 2>&1
 ```
 
-## Installing Quantum Espresso - GPU on TRACE ([TRACE]([https://www.psc.edu/resources/bridges-2/](https://cmu-enterprise.atlassian.net/wiki/spaces/TPR/overview?homepageId=2301461445)))
+## Installing Quantum Espresso - GPU on TRACE ([TRACE](https://cmu-enterprise.atlassian.net/wiki/spaces/TPR/overview?homepageId=2301461445))
 
 **1. Launch an interactive session on a GPU node.**
 
 ```console
-$ salloc --partition batch --gpus 1 --cpus-per-task 4 --time 4:00:00
+salloc --partition batch --gpus 1 --cpus-per-task 4 --time 4:00:00
 ```
 
 **2. Load modules.**
 
 ```console
-$ module purge
-$ module load psc.allocations.user/1.0 cuda/11.7 openmpi/4.0.5-nvhpc22.7 intel-oneapi-mkl/2022.1.0
+module purge
+module load psc.allocations.user/1.0 cuda/11.7 openmpi/4.0.5-nvhpc22.7 intel-oneapi-mkl/2022.1.0
 ```
 
 **3. Checking System Architecture**
 
 Check your details of the machine using 
 ```console
-$ nvaccelinfo
+nvaccelinfo
 ``` 
 
 **4. Get the current package of QE from github** 
 ```console
-$ cd /path/where/you/want/qe/to/be/installed/
-$ mkdir qe
-$ cd qe
-$ git clone https://gitlab.com/QEF/q-e.git qe-7.3.1-cuda
-$ cd ./qe-7.3.1-cuda
-$ git fetch --all --tags
-$ git checkout tags/qe-7.3.1 -b qe-7.3.1
+cd /path/where/you/want/qe/to/be/installed/
+mkdir qe
+cd qe
+git clone https://gitlab.com/QEF/q-e.git qe-7.3.1-cuda
+cd ./qe-7.3.1-cuda
+git fetch --all --tags
+git checkout tags/qe-7.3.1 -b qe-7.3.1
 ```
 
 **4. Configure your installation using CMake**
 ```console
-$ mkdir build
-$ cd build
-$ cmake -DCMAKE_C_COMPILER=nvc -DCMAKE_Fortran_COMPILER=nvfortran -DQE_ENABLE_PROFILE_NVTX=ON -DQE_ENABLE_CUDA=ON -DQE_ENABLE_OPENACC=ON -DQE_ENABLE_OPENMP=ON -DNVFORTRAN_CUDA_CC=86 -DNVFORTRAN_CUDA_VERSION=11.7 -DQE_ENABLE_MPI_GPU_AWARE=ON -DCUDA_LIBS=cufft,cublas,cusolver,curand ..
-$ make -j4 > build.log 2>&1
+mkdir build
+cd build
+cmake -DCMAKE_C_COMPILER=nvc -DCMAKE_Fortran_COMPILER=nvfortran -DQE_ENABLE_PROFILE_NVTX=ON -DQE_ENABLE_CUDA=ON -DQE_ENABLE_OPENACC=ON -DQE_ENABLE_OPENMP=ON -DNVFORTRAN_CUDA_CC=86 -DNVFORTRAN_CUDA_VERSION=11.7 -DQE_ENABLE_MPI_GPU_AWARE=ON -DCUDA_LIBS=cufft,cublas,cusolver,curand ..
+make -j4 > build.log 2>&1
 ```
 
 ## Check your installation
