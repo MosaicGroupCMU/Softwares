@@ -134,7 +134,7 @@ make -j16 > build.log 2>&1
 **1. Launch an interactive session on a GPU node.**
 
 ```console
-salloc --partition batch --gpus 1 --cpus-per-task 4 --time 4:00:00
+salloc --partition batch --gpus 1 -N 1 --ntasks 4 --time 4:00:00
 ```
 
 **2. Load modules.**
